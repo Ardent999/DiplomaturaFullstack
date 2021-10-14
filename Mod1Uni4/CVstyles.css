@@ -1,0 +1,29 @@
+ul{
+    display: inline-block;
+    text-align: left;
+}
+ol{
+    display: inline-block;
+    text-align: left;
+}
+
+body{
+    text-align: center;
+    background-color: #1c9e88;
+}
+
+#perfil{
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.linespace{
+    margin-bottom: 0%;
+}
+
+#formbord{
+    background-color: rgba(201, 232, 23, 0.5);
+    border: solid black;
+    display: inline;
+    margin-bottom: 50px;
+}
