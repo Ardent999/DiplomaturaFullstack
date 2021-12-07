@@ -1,0 +1,87 @@
+form{
+    display: inline-block;
+    text-align: left;
+}
+
+body{
+    text-align: center;
+    background-color: #1c9e88;
+}
+
+#perfil{
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.linespace{
+    margin-bottom: 0%;
+}
+
+#formbord{
+    background-color: rgba(201, 232, 23, 0.5);
+    border: solid black;
+    display: inline;
+    margin-bottom: 50px;
+}
+
+.buttons{
+    cursor: pointer;
+    margin-left: 50px;
+}
+.warning{ /*Aqui Perdi como 3 horas para aprender como rellenar el icono*/
+    
+    color: #EED202;
+    /* text-shadow: 0 0 5px #000; */
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    background-image: linear-gradient(#000,#000);
+    background-repeat: no-repeat;
+    background-size: 30% 70%;
+    background-position: center;
+    position: relative;
+    top: 1px;
+}
+
+.boxed {
+    background: rgba(116,110,110,0.40);
+    background: repeating-radial-gradient(circle farthest-corner at center center, rgba(116,110,110,0.40) 0%, #ffffff 20%);
+    background: -webkit-repeating-radial-gradient(circle farthest-corner at center center, rgba(116,110,110,0.40) 0%, #ffffff 20%);
+    background: -moz-repeating-radial-gradient(circle farthest-corner at center center, rgba(116,110,110,0.40) 0%, #ffffff 20%);
+    /* background-color: white; */
+    height: 150px;
+    width: 200px;
+    padding-top: 10px;
+    margin:auto;
+    border-radius: 54px 54px 54px 54px;
+    border: 13px groove #5a765e;
+    color: #740a1c;
+    font-weight: bolder;
+    /* position:relative;
+    left: 42%;
+    height: auto;
+    width: 15%;
+    background-position-x: center; */
+}
+
+.tooltip { /*Encontre como hacer tooltips, asi que cree uno*/
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 60px;
+    color: #000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 1px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    left: 130%;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
