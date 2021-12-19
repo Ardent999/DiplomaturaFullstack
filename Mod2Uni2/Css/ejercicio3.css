@@ -1,0 +1,24 @@
+.cajagrande{
+    background-color: white;
+    height: 151px;
+    width: 1020px;
+    border: 2px solid black;
+    margin: auto;
+    margin-top: 125px;
+    margin-bottom: 125px;
+    display: flex;
+    justify-content:space-between ;
+    
+    }
+    
+    .caja{
+    background-color: tomato;
+    color: white;
+    width: 14.8%;
+    height: 100%;
+    text-align: center;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
