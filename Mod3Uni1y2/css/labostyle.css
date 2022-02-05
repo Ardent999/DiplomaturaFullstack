@@ -1,0 +1,283 @@
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    background: #add8e6;
+    background: linear-gradient(166deg,#add8e6 0%, #000080 130%);
+}
+
+.holder{ 
+    max-width: 960px; 
+    margin: 0 auto;
+}
+.holder2{ 
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+nav {
+    background-color: #ed6da9;
+    margin-top: 0;
+    margin-bottom: 2em;
+    position: sticky;
+    top: 8em;
+}
+
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    width: 16.3%;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /*removes hyperling underscore*/
+    text-align: center;
+    display: block;
+    padding: 0.2em 0.4em;
+}
+
+nav ul li a:hover{
+    background-color: rgba(0,0,0,0.3);
+}
+
+nav ul li a.active{
+    background-color: rgba(0,0,0,0.3);
+}
+
+header {
+    background-color: rgb(0, 161, 226);
+    padding-top: 1em;
+    padding-bottom: 0.6em;
+    position: sticky;
+    top: 0;
+}
+
+header h1 {
+    color: white;
+    font-size: 2.5em;
+    font-style: italic;
+    font-weight: 700;
+    display: inline-block;
+    position: relative;
+    bottom: 40px;
+}
+
+.animation {
+    animation-name: introscroll;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    
+        }
+    
+    @keyframes introscroll {
+        0% {
+            font-size:1em;
+            margin-left:75%;
+        }
+    
+        30% {
+            font-size: 2.5em;
+            margin-left: 50%;
+        }
+    
+        100% {
+            font-size: 2.5em;
+            margin-left:5%;
+        }
+    }
+
+header div img{
+    border-radius: 150px 150px 150px 150px;
+}
+
+footer {
+    background-color: #333333;
+    clear: both;
+    color: #FFFFFF;
+    padding: 3em 0;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.padri{
+    padding-right: 1%;
+}
+
+/* End of Index */
+
+/* Start of Staff */
+
+.pedro{
+margin: auto; 
+border: 2px solid black; 
+width: 30%; 
+text-align: center; 
+background: rgba(131, 204, 131, 0.4);
+background: linear-gradient(90deg,rgba(131, 204, 131, 0.4) 0%, rgba(56, 191, 56, 0.4) 90%);
+}
+
+.pedro img{
+    padding-top: 1em;
+    border-radius: 10%;
+}
+
+.pedro h4{
+    font-size: 1.2em ;
+}
+
+.pedro p{
+    font-family: 'Quintessential', cursive;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.txtright{
+    text-align: right;
+}
+
+.staffcont{
+    width: 48%; 
+    max-height: 300px;
+    background: rgba(131, 204, 131, 0.4);
+    background: linear-gradient(90deg,rgba(131, 204, 131, 0.4) 0%, rgba(56, 191, 56, 0.4) 90%);
+    border: 2px solid black;
+    margin: 8px;
+    box-sizing: border-box;
+}
+
+.staffcont:nth-of-type(1){
+    border-radius: 0px 0px 200px 0px;
+}
+
+.staffcont:nth-of-type(2){
+    border-radius: 0px 0px 0px 200px;
+}
+
+.staffcont:nth-of-type(2n+3){
+    border-radius: 0px 200px 200px 0px;
+}
+
+.staffcont:nth-of-type(2n+4){
+    border-radius: 200px 0px 0px 200px;
+}
+
+.staffcont:nth-last-of-type(2){
+    border-radius: 0px 200px 0px 0px;
+}
+
+.staffcont:last-of-type{
+    border-radius: 200px 0px 0px 0px;
+}
+
+.staffcont:nth-of-type(odd){
+    margin-left: 0;
+}
+
+.staffimg{
+    border-radius: 50px 50px 50px 50px;
+    padding: 1%;
+    width: 40%;
+}
+
+.widri{
+    width: 50%;
+    padding-right: 5%;
+}
+
+.widle{
+    width: 50%;
+    padding-left: 5%;
+}
+
+.staffcont h5{
+    font-size: 1.3em;
+
+}
+
+.staffcont h6{
+    color: blue;
+    font-size: 1.0em;
+    font-style: italic;
+    font-weight: 500;
+    margin: 0 0 1em;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.5em;
+}
+
+.staffcont p{
+    font-size: 1em;
+}
+
+/* end of staff */
+
+/* Start of Sectores */
+
+.sector{
+    border: 1px solid gray;
+    border-radius: 0.7em;
+    margin: 1em 0;
+    padding: 1em;
+    overflow: hidden;
+    background: rgba(131, 204, 131, 0.4);
+    background: linear-gradient(90deg,rgba(131, 204, 131, 0.4) 0%, rgba(56, 191, 56, 0.4) 90%);
+}
+
+.sector .info{
+    width: 65%;
+}
+
+.sector .info h4{
+    color: white;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 500;
+    margin: 0 0 1em;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.5em;
+}
+
+.sector .info p{
+    font-size: 0.8em;
+    line-height: 1.2em;
+}
+
+.sector img{
+    border-radius: 0.8em;
+    width: 30%;
+    height: 20%;
+}
+
+.sector:nth-child(even) img{
+    float: right;
+    margin: 0 0 0 1em;
+}
+
+.sector:nth-child(even) .info{
+    float: left;
+    text-align: right;
+}
+
+.sector:nth-child(odd) img{
+    float: left;
+    margin: 0 1em 0 0;
+}
+
+.sector:nth-child(odd) .info{
+    float: right;
+}
+
+/*End of Sectores*/
