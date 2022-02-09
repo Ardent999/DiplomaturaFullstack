@@ -28,9 +28,11 @@
 <body>
 
     <header>
-        <div class="holder">
-            <img src="img/logo.jpg" width="100" alt="Logo">
-            <h1 class="animation">Research Lab</h1>
+        <div class="holder" id="jsc">
+            <a href="index.html"><img src="img/logo.jpg" width="100" alt="Logo" id="jsci"></a>
+            <a href="index.html">
+                <h1 class="introscroll" id="jsch">Research Lab</h1>
+            </a>
         </div>
     </header>
 
@@ -39,14 +41,23 @@
         <img src="img/banner2.jpg" width="100%" alt="banner">
     </div>
 
-    <nav>
+    <nav id="jscn">
         <ul class="holder">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="Sectores.html">Sectores</a></li>
-            <li><a href="staff.html">Nosotros</a></li>
-            <li><a href="">Contacto</a></li>
-            <!-- <li><a href="">?</a></li> -->
-            <!-- <li><a href="">?</a></li> -->
+            <li class="dropdown">
+                <a id="hovt" href="pacientes/pacientesindex.html"><span>Pacientes</span>
+                </a>
+                <div class="dropdown-content">
+                    <a href="pacientes/turnosanalisis.html">Turnos Analisis</a>
+                    <a href="pacientes/pruebasmedicas.html">Pruebas Medicas</a>
+                    <a href="pacientes/coberturas.html">Coberturas</a>
+                    <a href="pacientes/portal.html">Portal Pacientes</a>
+                </div>
+            </li>
+            <li><a href="sectores.html">Sectores</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="novedades.html">Novedades</a></li>
+            <li><a href="empresas.html">Empresas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
 
@@ -94,22 +105,34 @@
                 deserunt sint qui! Nobis error, dolore animi, quia velit eveniet dolorum amet id architecto laboriosam
                 illo.</p>
         </div>
-        
-        <div class="left padri" style="width: 45%; padding-left: 1%;">
-        <img src="img/promo/pr3.jpg" alt="" width="100%">
-        <div class="left" style="width: 55%; padding-right: 2%;">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt tempore corrupti beatae aut asperiores cumque inventore culpa labore fugiat. Natus nostrum nam laborum iusto, molestias nesciunt sequi hic ipsam fugiat.</p>
-            <img src="img/Doctors/doctorsmilealt.jpg" style="width: 100%;" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore cum delectus esse laborum provident laudantium autem voluptate dignissimos necessitatibus suscipit voluptas eligendi officia magnam laboriosam facere repellat, nostrum recusandae?
-            Iusto voluptates, dolores sint eius qui sit id consequatur asperiores debitis praesentium deserunt sapiente, suscipit dolor tempore ipsa quos neque quaerat? Numquam rem culpa consectetur voluptatem nam itaque harum eveniet!</p>
-        </div>
 
-        <div class="left padri" style="width: 40%;">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam culpa animi itaque dignissimos sed distinctio expedita iusto mollitia asperiores esse quidem eius ad, ratione commodi autem hic reiciendis vero minus?
-            </p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint voluptates fuga nobis soluta. Explicabo natus voluptatibus officiis hic odit assumenda, exercitationem pariatur ex autem amet repellendus soluta sed, magnam nobis?
-            Deserunt voluptatem, magni doloremque facilis, minima cumque impedit voluptate sapiente totam, consectetur error maxime in doloribus placeat quae quia? Alias eaque tempora incidunt sint impedit aut dolore sit similique debitis!</p>
-        </div>
+        <div class="left padri" style="width: 45%; padding-left: 1%;">
+            <img src="img/promo/pr3.jpg" alt="" width="100%">
+            <div class="left" style="width: 55%; padding-right: 2%;">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt tempore corrupti beatae aut asperiores
+                    cumque inventore culpa labore fugiat. Natus nostrum nam laborum iusto, molestias nesciunt sequi hic
+                    ipsam fugiat.</p>
+                <img src="img/Doctors/doctorsmilealt.jpg" style="width: 100%;" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore cum delectus esse laborum
+                    provident laudantium autem voluptate dignissimos necessitatibus suscipit voluptas eligendi officia
+                    magnam laboriosam facere repellat, nostrum recusandae?
+                    Iusto voluptates, dolores sint eius qui sit id consequatur asperiores debitis praesentium deserunt
+                    sapiente, suscipit dolor tempore ipsa quos neque quaerat? Numquam rem culpa consectetur voluptatem
+                    nam itaque harum eveniet!</p>
+            </div>
+
+            <div class="left padri" style="width: 40%;">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam culpa animi itaque dignissimos sed
+                    distinctio expedita iusto mollitia asperiores esse quidem eius ad, ratione commodi autem hic
+                    reiciendis vero minus?
+                </p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint voluptates fuga nobis soluta.
+                    Explicabo natus voluptatibus officiis hic odit assumenda, exercitationem pariatur ex autem amet
+                    repellendus soluta sed, magnam nobis?
+                    Deserunt voluptatem, magni doloremque facilis, minima cumque impedit voluptate sapiente totam,
+                    consectetur error maxime in doloribus placeat quae quia? Alias eaque tempora incidunt sint impedit
+                    aut dolore sit similique debitis!</p>
+            </div>
         </div>
 
         <div class="left padri" style="width: 25%; background-color: white;  text-align: center;">
@@ -137,6 +160,27 @@
     <footer>
         &copy;2022 Research Lab Inc. Todos los derechos reservados.
     </footer>
+
+    <script>
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                document.getElementById("jsc").style.fontSize = "0.75em";
+                document.getElementById("jsch").style.height = "7em";
+                document.getElementById("jsc").style.height = "7em";
+                document.getElementById("jsch").style.bottom = "25px";
+                document.getElementById("jsci").style.width = "75px";
+                document.getElementById("jscn").style.top = "6.5em";
+
+            } else {
+                document.getElementById("jsc").style.fontSize = "1em";
+                document.getElementById("jsci").style.width = "100px";
+                document.getElementById("jsch").style.bottom = "40px";
+            }
+        }
+    </script>
 
 </body>
 

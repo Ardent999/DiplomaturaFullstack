@@ -28,9 +28,11 @@
 <body>
 
     <header>
-        <div class="holder">
-            <img src="img/logo.jpg" width="100" alt="Logo">
-            <h1 class="animation">Research Lab</h1>
+        <div class="holder" id="jsc">
+            <a href="index.html"><img src="img/logo.jpg" width="100" alt="Logo" id="jsci"></a>
+            <a href="index.html">
+                <h1 class="introscroll" id="jsch">Research Lab</h1>
+            </a>
         </div>
     </header>
 
@@ -39,14 +41,23 @@
         <img src="img/banner2.jpg" width="100%" alt="banner">
     </div>
 
-    <nav>
+    <nav id="jscn">
         <ul class="holder">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Sectores.html" class="active">Sectores</a></li>
-            <li><a href="staff.html">Nosotros</a></li>
-            <li><a href="">Contacto</a></li>
-            <!-- <li><a href="">?</a></li> -->
-            <!-- <li><a href="">?</a></li> -->
+            <li class="dropdown">
+                <a  id="hovt" href="pacientes/pacientesindex.html"><span>Pacientes</span>
+                </a>
+                <div class="dropdown-content">
+                    <a href="pacientes/turnosanalisis.html">Turnos Analisis</a>
+                    <a href="pacientes/pruebasmedicas.html">Pruebas Medicas</a>
+                    <a href="pacientes/coberturas.html">Coberturas</a>
+                    <a href="pacientes/portal.html">Portal Pacientes</a>
+                </div>
+            </li>
+            <li><a href="sectores.html" class="active">Sectores</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="novedades.html">Novedades</a></li>
+            <li><a href="empresas.html">Empresas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
 
@@ -56,56 +67,72 @@
             <img src="img/Labs/lab3.jpg" alt="Microlab">
             <div class="info">
                 <h4>Investigacion Microbiologica</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio tempore saepe. Molestiae, vel.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta
+                    quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio
+                    tempore saepe. Molestiae, vel.</p>
             </div>
         </div>
         <div class="sector">
             <img src="img/Labs/lab4.jpg" alt="Oncolab">
             <div class="info">
                 <h4>Investigacion Oncologica</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio tempore saepe. Molestiae, vel.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta
+                    quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio
+                    tempore saepe. Molestiae, vel.</p>
             </div>
         </div>
         <div class="sector">
             <img src="img/Labs/lab5.jpg" alt="Infect Lab">
             <div class="info">
                 <h4>Investigacion Infectologia</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio tempore saepe. Molestiae, vel.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta
+                    quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio
+                    tempore saepe. Molestiae, vel.</p>
             </div>
         </div>
         <div class="sector">
             <img src="img/Labs/lab1.jpg" alt="Lab hemo">
             <div class="info">
                 <h4>Investigacion Hematologica</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio tempore saepe. Molestiae, vel.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta
+                    quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio
+                    tempore saepe. Molestiae, vel.</p>
             </div>
         </div>
         <div class="sector">
             <img src="img/Labs/lab2.jpg" alt="Lab Genetica">
             <div class="info">
                 <h4>Investigacion Genetica</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio tempore saepe. Molestiae, vel.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta
+                    quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio
+                    tempore saepe. Molestiae, vel.</p>
             </div>
         </div>
         <div class="sector">
             <img src="img/Labs/alien_lab.jpg" alt="Spacelab">
             <div class="info">
                 <h4>Investigacion Extraplanetaria</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio tempore saepe. Molestiae, vel.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta
+                    quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio
+                    tempore saepe. Molestiae, vel.</p>
             </div>
         </div>
         <div class="sector">
             <img src="img/Labs/magic_lab.jpg" alt="Inv.Magica">
             <div class="info">
                 <h4>Investigacion Sobrenatural</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio tempore saepe. Molestiae, vel.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta
+                    quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio
+                    tempore saepe. Molestiae, vel.</p>
             </div>
         </div>
         <div class="sector">
             <img src="img/Labs/mask_lab.png" alt="Epidemiologia">
             <div class="info">
                 <h4>Investigacion Epidemiologica</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio tempore saepe. Molestiae, vel.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, doloremque dolore soluta
+                    quas nihil harum quidem adipisci corporis atque, quod exercitationem mollitia voluptas hic optio
+                    tempore saepe. Molestiae, vel.</p>
             </div>
         </div>
     </main>
@@ -113,6 +140,27 @@
     <footer>
         &copy;2022 Research Lab Inc. Todos los derechos reservados.
     </footer>
+
+    <script>
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                document.getElementById("jsc").style.fontSize = "0.75em";
+                document.getElementById("jsch").style.height = "7em";
+                document.getElementById("jsc").style.height = "7em";
+                document.getElementById("jsch").style.bottom = "25px";
+                document.getElementById("jsci").style.width = "75px";
+                document.getElementById("jscn").style.top = "6.5em";
+
+            } else {
+                document.getElementById("jsc").style.fontSize = "1em";
+                document.getElementById("jsci").style.width = "100px";
+                document.getElementById("jsch").style.bottom = "40px";
+            }
+        }
+    </script>
 
 </body>
 
