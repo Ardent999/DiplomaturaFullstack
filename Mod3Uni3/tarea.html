@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="delivery()">Tarea p1</button>
+    <p id="texto"></p>
+
+    <button onclick="arrsort()">Tarea p2</button>
+    <p id="numbers"></p>
+    <p id="high"></p>
+
+    <script>
+        function delivery() {
+            let texto;
+            var nombre = prompt('ingrese su nombre', '');
+            var x = prompt('ingrese distancia en metros', '');
+            var metodo
+
+            if (0 < x && x <= 1000) {
+            metodo = "Delivery cercano";
+            }
+            if (1000 < x && x <= 10000) {
+            metodo = "Bicicleta";
+            }
+            if (10000 < x && x <= 30000) {
+            metodo = "Colectivo";
+            }
+            if (30000 < x && x <= 100000) {
+            metodo = "Auto";
+            }
+            if (100000 < x) {
+            metodo = "Avion";
+            }
+
+            if (nombre == null || nombre == "") {
+                texto = "el usuario ha cancelado el prompt.";
+            } else {
+                texto = "Hola " + nombre + " su paquete llegara por " + metodo;
+            }
+            
+            document.getElementById("texto").innerHTML = texto;
+        }
+    </script>
+
+    <script>
+        function arrsort(){
+            var numarr = [];
+            var i = 0;
+            var M = prompt('ingrese la cantidad de elementos')
+            while (i <= [(M)-1]) {
+            numarr[i] = prompt("ingrese el elemento " + [i+1])
+            if (numarr[i] === null) break;
+            i++;
+            }
+            document.getElementById("numbers").innerHTML = numarr;
+            numarr.sort(function(a, b){return a - b});
+            var highest = "Numero mas alto es " + numarr[numarr.length - 1];
+            document.getElementById("high").innerHTML = highest;
+        }
+    </script>
+
+
+
+</body>
+
+</html>
