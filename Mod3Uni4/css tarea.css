@@ -1,0 +1,85 @@
+nav {
+    text-align: center;
+    margin-top: 20px;
+}
+nav li{
+    list-style: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
+/*Ejercicio 1*/
+
+.buttonholder{
+    text-align: center;
+    padding-top: 50px;
+}
+
+div p{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+button.boton{
+    height: 150px;
+    width: 150px;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    border: 0px;
+}
+
+#red{
+    background-color: red;
+}
+
+#green{
+    background-color: green;
+}
+
+#blue{
+    background-color: blue;
+}
+
+/*Ejercicio 2*/
+
+#areaholder{
+   text-align: center; 
+   margin-top: 50px;
+   width: 30%;
+   margin: auto;
+}
+
+#textarea{
+    height: 150px;
+    width: 100%;
+}
+
+#counter{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+}
+
+/*ejercicio 3*/
+
+.notaholder{
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    width: 30%;
+}
+
+.notaholder button{
+    height: 30px;
+    width: 60px;
+
+}
+
+.notaholder p{
+    text-align: left;
+    font-size: 20px;
+}

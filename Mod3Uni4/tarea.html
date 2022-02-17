@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea</title>
+    <link rel="stylesheet" href="css tarea.css">
+</head>
+
+<body>
+
+    <nav>
+        <li>
+            <button onclick="cambiarDisplay(0)">Ejercicio 1</button>
+            <button onclick="cambiarDisplay(1)">Ejercicio 2</button>
+            <button onclick="cambiarDisplay(2)">Ejercicio 3</button>
+        </li>
+    </nav>
+
+    <div class="item buttonholder" style="display: none;">
+        <p>Ejercicio 1</p>
+        <button id="red" class="boton" onclick="bcolor('red')">clickme</button>
+        <button id="green" class="boton" onclick="bcolor('green')">clickme</button>
+        <button id="blue" class="boton" onclick="bcolor('blue')">clickme</button>
+    </div>
+
+    <div class="item" id="areaholder" style="display: none;">
+        <p>Ejercicio 2</p>
+        <textarea id="textarea"></textarea>
+        <div id="counter">0 caracteres</div>
+    </div>
+
+    <div class="item notaholder" style="display: none;">
+        <button onclick="notas()">click</button>
+        <p id="demo" class="demo"></p>
+    </div>
+
+    <script>
+        var alumnos = [
+
+            {
+
+                nombre: 'Juan Gomez',
+
+                nota: 7
+
+            }, {
+
+                nombre: 'Pedro Rodriguez',
+
+                nota: 4
+
+            }, {
+
+                nombre: 'Roxana García',
+
+                nota: 8
+
+            }, {
+
+                nombre: 'Luciano Lopez',
+
+                nota: 5
+
+            }, {
+
+                nombre: 'Fernanda Gimenez',
+
+                nota: 6
+
+            }, {
+
+                nombre: 'Florencia Martinez',
+
+                nota: 10
+
+            }, {
+
+                nombre: 'Raul Sanchez',
+
+                nota: 7
+
+            }, {
+
+                nombre: 'Sandra Figueroa',
+
+                nota: 8
+
+            }
+
+        ];
+    </script>
+
+
+    <script src="js tarea.js"></script>
+</body>
+
+</html>
