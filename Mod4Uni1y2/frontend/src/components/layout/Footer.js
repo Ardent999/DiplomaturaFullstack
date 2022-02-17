@@ -1,8 +1,8 @@
 const Footer = (props) => {
     return (
         <footer>
-        <p>armado por Federicod - &copy;Year</p>
-        </footer>
+        &copy;2022 Research Lab Inc. Todos los derechos reservados.
+    </footer>
     );
 }
 
