@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Lab</title>
+    <link rel="icon" type="image/x-icon" href="img/logoico.jpg">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quintessential&family=Redacted&family=Roboto&family=Roboto+Condensed:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/labostyle.css">
+    <link rel="stylesheet" href="css/moblabostyle.css"
+        media="handheld, screen and (min-width: 230px) and (max-width: 800px)">
+
+    <!--
+        font-family: 'Quintessential', cursive;
+        font-family: 'Redacted', cursive;
+        [font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto Condensed', sans-serif;
+    -->
+
+</head>
+
+<body>
+
+    <header>
+        <div class="holder" id="jsc">
+            <a href="index.html"><img src="img/logo.jpg" width="100" alt="Logo" id="jsci"></a>
+            <a href="index.html">
+                <h1 class="introscroll" id="jsch">Research Lab</h1>
+            </a>
+        </div>
+    </header>
+
+    <div style="margin-bottom: -5px;">
+        <!--slap banner image here-->
+        <img src="img/banner2.jpg" width="100%" alt="banner">
+    </div>
+
+    <nav id="jscn">
+        <ul class="holder">
+            <li class="dropdown">
+                <a  id="hovt" href="pacientes/pacientesindex.html"><span>Pacientes</span>
+                </a>
+                <div class="dropdown-content">
+                    <a href="pacientes/turnosanalisis.html">Turnos Analisis</a>
+                    <a href="pacientes/pruebasmedicas.html">Pruebas Medicas</a>
+                    <a href="pacientes/coberturas.html">Coberturas</a>
+                    <a href="pacientes/portal.html">Portal Pacientes</a>
+                </div>
+            </li>
+            <li><a href="sectores.html">Sectores</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="novedades.html" class="active">Novedades</a></li>
+            <li><a href="empresas.html">Empresas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="holder">
+        
+    </main>
+
+    <footer>
+        &copy;2022 Research Lab Inc. Todos los derechos reservados.
+    </footer>
+
+    <script>
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                document.getElementById("jsc").style.fontSize = "0.75em";
+                document.getElementById("jsch").style.height = "7em";
+                document.getElementById("jsc").style.height = "7em";
+                document.getElementById("jsch").style.bottom = "25px";
+                document.getElementById("jsci").style.width = "75px";
+                document.getElementById("jscn").style.top = "6.5em";
+
+            } else {
+                document.getElementById("jsc").style.fontSize = "1em";
+                document.getElementById("jsci").style.width = "100px";
+                document.getElementById("jsch").style.bottom = "40px";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
