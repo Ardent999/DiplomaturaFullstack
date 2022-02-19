@@ -1,3 +1,5 @@
+import '../styles/components/pages/SectoresPage.css'
+
 const HomePage = (props) => {
     return (
         <main className="holder">

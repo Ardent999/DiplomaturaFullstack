@@ -1,3 +1,5 @@
+import '../../styles/components/layout/Header.css'
+
 import { Link } from "react-router-dom"
 
 const Header = (props) => {
@@ -13,5 +15,8 @@ const Header = (props) => {
 
     );
 }
+
+
+
 
 export default Header;

@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './normalize.css'
+import './App.css'
 
 import Header from './components/layout/Header'
 import Banner from './components/layout/Banner'

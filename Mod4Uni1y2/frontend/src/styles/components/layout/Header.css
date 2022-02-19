@@ -1,0 +1,62 @@
+header {
+    background-color: rgb(0, 161, 226);
+    padding-top: 1em;
+    padding-bottom: 0.6em;
+    position: sticky;
+    top: 0;
+}
+
+header h1 {
+    color: white;
+    font-size: 2.5em;
+    font-style: italic;
+    font-weight: 700;
+    display: inline-block;
+    position: relative;
+    bottom: 40px;
+}
+
+.introscroll {
+    animation-name: introscroll;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    
+        }
+    
+    @keyframes introscroll {
+        0% {
+            font-size:1em;
+            margin-left:75%;
+        }
+    
+        30% {
+            font-size: 2.5em;
+            margin-left: 50%;
+        }
+    
+        100% {
+            font-size: 2.5em;
+            margin-left:5%;
+        }
+    }
+
+#jsc{
+    transition: 0.2s;
+    }
+
+#jsci{
+    transition: 0.2s;
+    }
+
+#jscn{
+    transition: 0.2s;
+ }
+#jsch{
+    transition: 0.2s;
+ }
+
+header div img{
+    border-radius: 150px 150px 150px 150px;
+}

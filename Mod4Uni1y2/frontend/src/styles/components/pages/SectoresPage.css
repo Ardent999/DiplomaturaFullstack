@@ -1,0 +1,53 @@
+.sector{
+    border: 1px solid gray;
+    border-radius: 0.7em;
+    margin: 1em 0;
+    padding: 1em;
+    overflow: hidden;
+    background: rgba(131, 204, 131, 0.4);
+    background: linear-gradient(90deg,rgba(131, 204, 131, 0.4) 0%, rgba(56, 191, 56, 0.4) 90%);
+}
+
+.sector .info{
+    width: 65%;
+}
+
+.sector .info h4{
+    color: white;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 500;
+    margin: 0 0 1em;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.5em;
+}
+
+.sector .info p{
+    font-size: 0.8em;
+    line-height: 1.2em;
+}
+
+.sector img{
+    border-radius: 0.8em;
+    width: 30%;
+    height: 20%;
+}
+
+.sector:nth-child(even) img{
+    float: right;
+    margin: 0 0 0 1em;
+}
+
+.sector:nth-child(even) .info{
+    float: left;
+    text-align: right;
+}
+
+.sector:nth-child(odd) img{
+    float: left;
+    margin: 0 1em 0 0;
+}
+
+.sector:nth-child(odd) .info{
+    float: right;
+}

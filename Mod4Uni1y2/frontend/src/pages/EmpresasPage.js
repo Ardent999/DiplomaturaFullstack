@@ -1,3 +1,5 @@
+import '../styles/components/pages/EmpresasPage.css'
+
 const HomePage = (props) => {
     return (
         <main class="holder">
