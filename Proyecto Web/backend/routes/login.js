@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/logon', function(req, res, next) {
-  res.render('portal');
+  res.redirect('portal');
 });
 
 module.exports = router;
