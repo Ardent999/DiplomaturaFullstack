@@ -1,0 +1,156 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: grey;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+/*Nav*/
+
+nav {
+  background-color: rgb(143, 101, 101);
+  margin-top: 0;
+  margin-bottom: 2em;
+  position: sticky;
+  /* top: 8em; */
+  box-sizing: border-box;
+}
+
+nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  width: 16.3%;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  padding: 0.7em 0.4em;
+}
+
+nav ul li div.dropdown-content a{
+  color: black;
+}
+
+nav ul li a:hover{
+  /* background-color: rgba(0,0,0,0.3); */
+  animation-name: navshade;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes navshade {
+  0% {
+      background-color: rgba(0,0,0,0.3);
+  }
+
+  100% {
+      color: black;
+      background-color: rgba(0,0,0,0.3);
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  animation-name: dropdown;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.dropdown:hover #hovt{
+  animation-name: navshade;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dropdown {
+
+  100%{
+  background-color: rgb(0, 161, 226);
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0.5em 0.5em;
+  }
+}
+
+nav ul li a.active{
+  background-color: rgba(0,0,0,0.3);
+  color: black;
+}
+
+/*End of Nav*/
+
+/*Footer*/
+
+footer {
+  background-color: #333333;
+  clear: both;
+  color: #FFFFFF;
+  padding: 3em 0;
+  margin-top: 2em;
+  text-align: center;
+}
+
+/*End of Footer*/
+
+/*Forms*/
+.form{
+  text-align: center;
+  width: 25%;
+  margin: auto;
+}
+
+.form input{
+  height: 2em;
+}
+
+
+
+.form2{
+  /* display: inline-block; */
+  /* padding-right: 17%; */
+  padding-top: 5%;
+  float: left;
+}
+
+.form button{
+  height: 2em;
+  margin-left: 2em;
+  /* float: right; */
+}
+
+.nom1{
+  float: left;
+  margin-right: 2%;
+}
+
+.nom2{
+  float: left;
+  color: rgb(109, 13, 13);
+}
+
+#someth{
+  font-size: 0.6em;
+}
+/*End of Forms*/
