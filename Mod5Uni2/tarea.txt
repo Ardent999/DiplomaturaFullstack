@@ -1,0 +1,122 @@
+1) ¿Cuáles son los nombres y la ocupación de cada uno de los empleados? 
+
+SELECT nombre, apellido, trabajo
+FROM empleados
+
+=========================================================================
+2) ¿Cuál es el nombre y la edad de cada uno de los empleados?
+
+SELECT nombre, edad
+FROM empleados
+
+=========================================================================
+3) ¿Cuál es el nombre y la edad de todos los programadores?
+
+SELECT nombre, edad
+FROM empleados
+WHERE trabajo = 'programador'
+
+=========================================================================
+4) ¿Cuáles son los empleados de mas de 30 años?
+
+SELECT nombre, apellido
+FROM empleados
+WHERE edad > 30
+
+=========================================================================
+5) ¿Cuál es el apellido y el mail de los empleados llamados Juan?
+
+SELECT apellido, mail
+FROM empleados
+WHERE nombre = 'juan'
+
+=========================================================================
+6) ¿Cuál es el nombre de las personas que trabajan como Programadores o Desarrolladores Web?
+
+SELECT nombre
+FROM empleados
+WHERE trabajo = 'programador'
+OR trabajo = 'desarrollador web'
+
+=========================================================================
+7) Mostrar una lista (id_emp, nombre, apellido, trabajo) de las personas cuyo numero de empleado esté entre 15 y 20.
+
+SELECT id_emp, nombre, apellido, trabajo
+FROM empleados
+WHERE id_emp BETWEEN 15 AND 20
+
+=========================================================================
+8) ¿Cuáles son los Programadores que ganan menos de $80000?
+
+SELECT nombre, apellido
+FROM empleados
+WHERE trabajo = "programador"
+AND salario < 80000
+
+=========================================================================
+9) ¿Cuáles son los Programadores que ganan entre $75000 y  $90000?
+
+SELECT nombre, apellido
+FROM empleados
+WHERE trabajo = "programador"
+AND salario BETWEEN 75000 AND 90000
+
+=========================================================================
+10) ¿Cuáles son los trabajadores cuyo apellido comienza con S?
+
+SELECT nombre, apellido
+FROM empleados
+WHERE apellido LIKE 's%'
+
+=========================================================================
+11) ¿Cuáles son los trabajadores cuyo nombre termina en l?
+
+SELECT nombre, apellido
+FROM empleados
+WHERE nombre LIKE '%l'
+
+=========================================================================
+12) Agregar un empleado con ID_empleado 22 con los siguientes datos: Francisco Perez,  Programador, 26 años, salario 90000, mail: francisco@bignet.com.
+
+INSERT INTO empleados (id_emp, nombre, apellido, trabajo, edad, salario, mail)
+VALUES ('22', 'Francisco', 'Perez', 'Programador', 26, 90000, 'francisco@bignet.com')
+
+=========================================================================
+13) Borrar los datos de Hernan Rosso.
+
+DELETE FROM empleados
+WHERE nombre = 'Hernan'
+AND apellido = 'Rosso'
+
+=========================================================================
+14) Modificar el salario de Daniel Gutierrez a 90000.
+
+UPDATE empleados
+SET salario = 90000
+WHERE nombre = 'Daniel'
+AND apellido = 'Gutierrez'
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+INSERT INTO empleados VALUES (1, 'Juan','Hagan', 'Programador Senior', 32, 120000, 'juan_hagan@bignet.com');
+INSERT INTO empleados VALUES (2, 'Gonzalo', 'Pillai', 'Programador Senior', 32, 110000, 'g_pillai@bignet.com');
+INSERT INTO empleados VALUES (3, 'Ana', 'Dharma', 'Desarrollador Web', 27, 90000, 'ana@bignet.com');
+INSERT INTO empleados VALUES (4, 'Maria', 'Anchor', 'Desarrollador Web', 26, 85000, 'mary@bignet.com');
+INSERT INTO empleados VALUES (5, 'Alfredo', 'Fernandez', 'Programador', 31, 75000, 'af@bignet.com');
+INSERT INTO empleados VALUES (6, 'Juan', 'Aguero', 'Programador', 34, 80000, 'juan@bignet.com');
+INSERT INTO empleados VALUES (7, 'Eduardo', 'Sacan', 'Programador', 25, 75000, 'eddie@bignet.com');
+INSERT INTO empleados VALUES (8, 'Alejandro', 'Nanda', 'Programador', 32, 70000, 'alenanda@bignet.com');
+INSERT INTO empleados VALUES (9, 'Hernan', 'Rosso', 'Especialista Multimedia', 33, 90000, 'hernan@bignet.com');
+INSERT INTO empleados VALUES (10, 'Paublo', 'Simon', 'Especialista Multimedia', 43, 85000, 'ps@bignet.com');
+INSERT INTO empleados VALUES (11, 'Arturo', 'Hernandez', 'Especialista Multimedia', 32, 75000, 'arturo@bignet.com');
+INSERT INTO empleados VALUES (12, 'Jimena', 'Cazado', 'Diseñador Web Senior', 32, 110000, 'jimena@bignet.com');
+INSERT INTO empleados VALUES (13, 'Roberto', 'Luis', 'Administrador de Sistemas', 35, 100000, 'roberto@bignet.com');
+INSERT INTO empleados VALUES (14, 'Daniel', 'Gutierrez', 'Administrador de Sistemas', 34, 900000, 'daniel@bignet.com');
+INSERT INTO empleados VALUES (15, 'Miguel', 'Harper', 'Ejecutivo de Ventas Senior', 36, 120000, 'miguel@bignet.com');
+INSERT INTO empleados VALUES (16, 'Monica', 'Sanchez', 'Ejecutivo de Ventas', 30, 90000, 'monica@bignet.com');
+INSERT INTO empleados VALUES (17, 'Alicia', 'Simlai', 'Ejecutivo de Ventas', 27, 70000, 'alicia@bignet.com');
+INSERT INTO empleados VALUES (18, 'Jose', 'Iriarte', 'Ejecutivo de Ventas', 27, 72000, 'jose@bignet.com');
+INSERT INTO empleados VALUES (19, 'Sabrina', 'Allende', 'Gerente de Soporte Tecnico', 32, 200000, 'sabrina@bignet.com');
+INSERT INTO empleados VALUES (20, 'Pedro', 'Campion', 'Gerente de Finanzas', 36, 220000, 'pedro@bignet.com');
+INSERT INTO empleados VALUES (21, 'Mariano', 'Dharma', 'Presidente', 28, 300000, 'mariano@bignet.com');
