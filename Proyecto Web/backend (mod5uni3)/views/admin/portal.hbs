@@ -1,0 +1,44 @@
+<h1>{{title}}</h1>
+{{!-- {{#if success}} --}}
+<div id="session" class="right">
+<p>Hola {{nombre}} {{apellido}}
+    <br>
+<a href="/salir">Salir</a></p>
+</div>
+<main style="clear: both;">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias animi nulla dolore voluptatibus maxime quasi culpa quam hic modi in rem, voluptatem sapiente minus quaerat non aut corporis id accusamus Lorem ipsum dolor sit amet consectetur adipisicing elit. Error et dignissimos nesciunt voluptatibus. Quis, omnis ipsum, mollitia, quia architecto nulla non quaerat aliquam rerum molestiae at tempora sed possimus numquam!</p>
+</main>
+
+<div>
+    <p style="color: green;">{{mensjenvio}}</p>
+    <p style="color: red;">{{mensjenviofail}}</p>
+<form action="/bdadd" method="post">
+    <input type="text" placeholder="nombre" name="bdnombre">
+    <br>
+    <input type="text" placeholder="apellido" name="bdapellido">
+    <br>
+    <input type="number" placeholder="edad" name="bdedad">
+    <br>
+    <input type="text" placeholder="trabajo" name="bdtrabajo">
+    <br>
+    <input type="number" placeholder="salario" name="bdsalario">
+    <br>
+    <input type="email" placeholder="mail" name="bdmail">
+    <br>
+    <button>Enviar a BD</button>
+    <br>
+<div style="margin-top: 3em;">
+    <p style="color: green;">{{mensjenviodel}}</p>
+    <p style="color: red;">{{mensjenviofaildel}}</p>
+    <form action="/bddel">
+    <input type="text" placeholder="nombre" name="bdnom">
+    <br>
+    <input type="text" placeholder="apellido" name="bdape">
+    <br>
+    <button>Deletear de BD</button>
+    </form>
+    </div>
+</form>
+</div>
+
+{{!-- {{/if}} --}}
