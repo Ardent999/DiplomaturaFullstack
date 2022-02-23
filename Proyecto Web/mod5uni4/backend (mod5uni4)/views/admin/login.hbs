@@ -1,0 +1,24 @@
+<div class="form">
+    <h3>Ingrese sus datos.</h3>
+    <p class="nom2">{{mensjfail}}</p>
+    <form action="/login" method="post">
+        <div class="nom1">
+            <div class="nom2">{{nombrefail}}</div>
+            <br>
+            <input type="email" placeholder="mail@researchlab.achuu" name="email" pattern=".+@researchlab\.achuu" title="debe utilizar @researchlab.achuu">
+        </div>
+        <br>
+        <div class="form2">
+            <div id="someth" class="nom2">{{passfail}}</div>
+            <br>
+            <input type="password" placeholder="Password" name="password">
+            <button>Login</button>
+
+            {{#if error}}
+            <p>Usuario o Clave Incorrecta</p>
+            {{/if}}
+
+
+        </div>
+    </form>
+</div>
