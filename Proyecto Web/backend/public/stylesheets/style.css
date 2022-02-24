@@ -113,3 +113,44 @@ footer {
 }
 
 /*End of Footer*/
+
+/*Forms*/
+.form{
+  text-align: center;
+  width: 25%;
+  margin: auto;
+}
+
+.form input{
+  height: 2em;
+}
+
+
+
+.form2{
+  /* display: inline-block; */
+  /* padding-right: 17%; */
+  padding-top: 5%;
+  float: left;
+}
+
+.form button{
+  height: 2em;
+  margin-left: 2em;
+  /* float: right; */
+}
+
+.nom1{
+  float: left;
+  margin-right: 2%;
+}
+
+.nom2{
+  float: left;
+  color: rgb(109, 13, 13);
+}
+
+#someth{
+  font-size: 0.6em;
+}
+/*End of Forms*/
