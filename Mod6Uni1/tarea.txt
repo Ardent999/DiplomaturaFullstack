@@ -1,0 +1,46 @@
+Secciones dinamicas:
+
+>>Login.
+Utilizaria una tabla con columnas de: id (int), nombre (varchar), apellido (varchar), 
+edad (int), mail (varchar), clave (varchar) y autorizacion (int).
+
+id seria primario y autoincrementable, Nombre, Apellido serian para identificar el 
+usuario adentro de la sesion ("hola tal y tal" etc), edad seria para verificar la 
+edad, el mail se usaria como usuario, y la clave estaria encriptada. 
+finalmente, autorizacion variaria entre 1 y 3, y seria el nivel de acceso que tiene 
+el usuario. 
+(1 siendo un usuario tipo cliente, 2 siendo un usuario tipo staff, 
+y 3 siendo nivel administrador.)
+
+Usuarios tendrian la opcion de registrarse mediante un boton, 
+el cual agregaria sus datos a la tabla, y los dejaria entrar al sitio como usuarios. 
+En el caso de miebros del equipo, un administrador subiria su nivel de autorizacion 
+mediante una tab del backend solo accedible por administradores. Eso si puedo figurar como
+construirla.
+
+
+>>Consultas y contacto.
+Utilizaria una tabla con columnas de: 
+id (int), nombre (varchar), apellido (varchar), email (varchar), telefono (varchar), 
+whatsapp (varchar), contenido (text). 
+
+id seria primario y autoincrementable, nombre y apellido serian para que 
+el que responda sepa a quien.
+Email, Telefono y whatsapp siendo opcionales con por lo menos uno de los 3 requeridos 
+para poder devolverle una respuesta. 
+Contenido seria un bloque en el cual estaria la consulta.
+Si puedo encontrar como, haria que el servidor chequee la session y en caso de 
+estar logueado, esconda el input de nombre, apellido y posiblemente email, 
+ya que estos estan declarados previamente.
+
+
+>>Novedades.
+Utilizaria una tabla con columnas de id (int), titulo (varchar), cuerpo (text)
+id seria primario y autoincrementable, el titulo seria un mensaje corto que 
+describa el tema de la novedad y el cuerpo seria el tema en si.
+Estaria hecho de forma que en la seccion de novedades de la pagina se vea el titulo, 
+y se pueda cliquear para abrir como accordion y ver el tema.
+
+Posiblemente habria otro sector de novedades los cuales solo cuentas con autorizacion 
+nivel 2 o mayor puedan acceder que sean novedades internas de la compania. Esto
+usaria una tabla diferente, pero con el mismo formato.
