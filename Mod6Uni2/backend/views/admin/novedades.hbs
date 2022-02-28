@@ -1,0 +1,73 @@
+{{!-- fila 1 --}}
+<div class="container" style="margin 50px auto">
+    <div class="row">
+
+        <p class="text-end"> Hola {{usuario}} {{apellido}}! </p>
+
+    </div>
+
+    {{!-- fila 2 --}}
+    <div class="row">
+        <div class="col-7">
+            <h2>Listado de Novedades</h2>
+        </div>
+    </div>
+    {{!-- fila 3 --}}
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr class="table-dark">
+                        
+                        <th scope="col">Titulo</th>
+                        <th class="col-1">Acciones</th>
+                    </tr>
+                </thead>
+                {{!-- <tbody> --}}
+                    </table>
+                    {{#each novedades}}
+                    {{!-- <tr>
+                        <th scope="row">{{id}}</th>
+                        <td>{{titulo}}</td>
+                        <td class="text-end">
+                            <a href="/admin/novedades/modificar/{{id}}" class="btn btn-sm btn-secondary">
+                                <i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+                            <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-sm btn-secondary">
+                                <i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </td>
+                    </tr> --}}
+
+                    <div class="accordion accordion-flush" id="accordion{{id}}">
+                        <div class="accordion-item" >
+                            <h2 class="accordion-header" id="heading{{id}}">
+                                <button style="color: black;" class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse{{id}}" aria-expanded="false"
+                                    aria-controls="collapse{{id}}">
+                                    {{titulo}}
+                                    <div class="col text-end">
+                                        <a href="/admin/novedades/modificar/{{id}}" class="btn btn-sm btn-secondary">
+                                            <i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+                                        <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-sm btn-secondary">
+                                            <i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="collapse{{id}}" class="accordion-collapse collapse"
+                                aria-labelledby="heading{{id}}" data-bs-parent="#accordion{{id}}">
+                                <div style="background-color: rgb(209, 209, 209);" class="accordion-body">
+                                    {{cuerpo}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+
+                {{!-- </tbody> --}}
+            {{!-- </table> --}}
+            <div style="margin-top: 50px;" class="col text-end">
+                <a href="/admin/novedades/agregar" class="btn btn-primary"> <i class="fa fa-plus"
+                        aria-hidden="true"></i> Nuevo</a>
+            </div>
+        </div>
+    </div>
+</div>

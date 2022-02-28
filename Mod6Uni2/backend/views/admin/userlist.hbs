@@ -1,0 +1,57 @@
+{{!-- fila 1 --}}
+<div class="container" style="margin 50px auto">
+    <div class="row">
+
+        <p class="text-end"> Hola {{usuario}} {{apellido}}! </p>
+
+    </div>
+
+    {{!-- fila 2 --}}
+    <div class="row">
+        <div class="col-7">
+            <h2>Listado de Usuarios</h2>
+        </div>
+    </div>
+    {{!-- fila 3 --}}
+    <div class="row">
+        <div class="col">
+            <table class="table" style="background-color: white;">
+                <thead>
+                    <tr class="table-light">
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Clearance</th>
+                        <th class="col-1">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+            
+            {{#each users}}
+            <tr>
+                <th scope="row">{{id_usu}}</th>
+                <td>{{nombre}} {{apellido}}</td>
+                <td>{{edad}}</td>
+                <td>{{mail}}</td>
+                <td>{{clearance}}</td>
+                <td class="text-end">
+                    <a href="/admin/userconfig/edituser/{{id_usu}}" class="btn btn-sm btn-secondary">
+                        <i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+                    <a href="/admin/userconfig/deleteuser/{{id_usu}}" class="btn btn-sm btn-secondary">
+                        <i class="fa fa-trash" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+
+
+            {{/each}}
+
+            </tbody>
+            </table>
+            <div style="margin-top: 50px;" class="col text-end">
+                <a href="/admin/userconfig/adduser" class="btn btn-primary"> <i class="fa fa-plus"
+                        aria-hidden="true"></i> Nuevo Usuario</a>
+            </div>
+        </div>
+    </div>
+</div>
