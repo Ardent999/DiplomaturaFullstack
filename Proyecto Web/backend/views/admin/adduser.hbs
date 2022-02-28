@@ -1,0 +1,30 @@
+<div class="container" style="margin:100px auto">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4>Agregar un nuevo Usuario</h4>
+            <form action="/admin/userconfig/adduser" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Apellido" name="apellido">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" placeholder="Edad" name="edad">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="mail@researchlab.achuu" name="mail" pattern=".+@researchlab\.achuu"
+            title="debe utilizar @researchlab.achuu">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" name="clave">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+            {{#if error}}
+            <h5>{{message}}</h5>
+            {{/if}}
+        </div>
+    </div>
+</div>

@@ -4,9 +4,9 @@ body {
   background-color: grey;
 }
 
-a {
+/* a {
   color: #00B7FF;
-}
+} */
 
 
 /*Nav*/
@@ -46,7 +46,7 @@ nav ul li div.dropdown-content a{
 nav ul li a:hover{
   /* background-color: rgba(0,0,0,0.3); */
   animation-name: navshade;
-  animation-duration: 0.4s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
 

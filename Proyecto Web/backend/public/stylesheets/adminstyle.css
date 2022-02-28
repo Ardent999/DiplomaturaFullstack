@@ -2,9 +2,9 @@ nav{
     background-color: rgb(146, 104, 185);
 }
 
-a{
+/* a{
     color: rgb(161, 3, 3);
-}
+} */
 
 .left{
     float: left;
@@ -14,7 +14,7 @@ a{
     float: right;
 }
 
-#session{
+.session{
     margin: auto;
     margin-right: 2em;
     

@@ -15,8 +15,9 @@ var homeRouter = require('./routes/home')
 var recursosRouter = require('./routes/recursos');
 var novedadesRouter = require('./routes/novedades');
 var loginRouter = require('./routes/admin/login');
-var portalRouter = require('./routes/admin/portal');
-var adminhomeRouter = require('./routes/admin/home')
+var adminconfigRouter = require('./routes/admin/userconfig');
+var adminhomeRouter = require('./routes/admin/home');
+var novedadesAdminRouter = require('./routes/admin/novedades');
 
 
 // const req = require('express/lib/request');
@@ -80,21 +81,21 @@ secured = async(req,res,next) => {
 // });
 
 
-app.get('/portal', function (req, res) {
-  // var success = Boolean(req.session.nombre && req.session.apellido)
+// app.get('/userconfig', function (req, res) {
+//   // var success = Boolean(req.session.nombre && req.session.apellido)
 
-  res.render('admin/portal', {
-    title: 'Sesion Research Lab',
-    // success: success,
-    nombre: req.session.nombre,
-    apellido: req.session.apellido,
-    layout: 'admin/layout',
-    mensjenvio: req.session.mensjenvio,
-    mensjenviofail: req.session.mensjenviofail,
-    // mensjenviodel: req.session.mensjenviodel,
-    // mensjenviofaildel: req.session.mensjenviofaildel
-  })
-});
+//   res.render('admin/userconfig', {
+//     title: 'Sesion Research Lab',
+//     // success: success,
+//     nombre: req.session.nombre,
+//     apellido: req.session.apellido,
+//     layout: 'admin/layout',
+//     mensjenvio: req.session.mensjenvio,
+//     mensjenviofail: req.session.mensjenviofail,
+//     mensjenviodel: req.session.mensjenviodel,
+//     mensjenviofaildel: req.session.mensjenviofaildel
+//   })
+// });
 
 app.get('/admin/home', function (req, res) {
   res.render('admin/home', {
@@ -129,58 +130,59 @@ app.get('/admin/home', function (req, res) {
 //   })
 // });
 
-app.post('/bdadd', function (req, res) {
+// app.post('/bdadd', function (req, res) {
 
-  if (req.body.bdnombre && req.body.bdapellido && req.body.bdedad && req.body.bdmail && req.body.bdclave) {
+//   if (req.body.bdnombre && req.body.bdapellido && req.body.bdedad && req.body.bdmail && req.body.bdclave) {
     
-    var obj = {
-      nombre: req.body.bdnombre,
-      apellido: req.body.bdapellido,
-      edad: req.body.bdedad,
-      mail: req.body.bdmail,
-      password: md5(req.body.bdclave)
-    }
+//     var obj = {
+//       nombre: req.body.bdnombre,
+//       apellido: req.body.bdapellido,
+//       edad: req.body.bdedad,
+//       mail: req.body.bdmail,
+//       password: md5(req.body.bdclave),
+//       clearance: 0
+//     }
     
-    pool.query('insert into usuarioslab set ?', [obj]);
-    req.session.mensjenvio = 'gracias por registrarte'
-    req.session.mensjenviofail = null
-    // req.session.mensjenviofaildel = null
-    // req.session.mensjenviodel = null
-    res.redirect('/portal')
+//     pool.query('insert into usuarioslab set ?', [obj]);
+//     req.session.mensjenvio = 'gracias por registrarte'
+//     req.session.mensjenviofail = null
+//     // req.session.mensjenviofaildel = null
+//     // req.session.mensjenviodel = null
+//     res.redirect('/admin/userconfig')
 
-  } else {
-    req.session.mensjenviofail = 'ingrese datos en todos los campos.'
-    req.session.mensjenvio = null
-    // req.session.mensjenviofaildel = null
-    // req.session.mensjenviodel = null
-    res.redirect('/portal')
-  }
-});
+//   } else {
+//     req.session.mensjenviofail = 'ingrese datos en todos los campos.'
+//     req.session.mensjenvio = null
+//     // req.session.mensjenviofaildel = null
+//     // req.session.mensjenviodel = null
+//     res.redirect('/userconfig')
+//   }
+// });
 
 ///bddel no funciona 
 
-// app.post('/bddel', function (req, res) {
-//   var nom = req.body.bdnom;
-//     var ape = req.body.bdape;
+app.post('/bddel', function (req, res) {
+  var nom = req.body.bdnom;
+    var ape = req.body.bdape;
 
-//   if (nom && ape) {
+  if (nom && ape) {
     
 
-//     pool.query('delete from usuarioslab where nombre=? and apellido=? ', [nom, ape])
-//     req.session.mensjenviodel = 'Has deleteado a ' + nom + ' ' + ape + '.'
-//     req.session.mensjenviofaildel = null
-//     req.session.mensjenvio = null
-//     req.session.mensjenviofail = null
-//     res.redirect('/portal')
-//   } else {
-//     req.session.mensjenviofaildel = 'esto ha fallido test.'
-//     req.session.mensjenviodel = null
-//     req.session.mensjenvio = null
-//     req.session.mensjenviofail = null
-//     res.redirect('/portal')
-//   }
+    pool.query('delete from usuarioslab where nombre=? and apellido=? ', [nom, ape]);
+    req.session.mensjenviodel = 'Has deleteado a ' + nom + ' ' + ape + '.'
+    req.session.mensjenviofaildel = null
+    req.session.mensjenvio = null
+    req.session.mensjenviofail = null
+    res.redirect('/userconfig')
+  } else {
+    req.session.mensjenviofaildel = 'esto ha fallido test.'
+    req.session.mensjenviodel = null
+    req.session.mensjenvio = null
+    req.session.mensjenviofail = null
+    res.redirect('/userconfig')
+  }
 
-// });
+});
 
 
 // var nam = 'juan';
@@ -211,8 +213,9 @@ app.use('/home', homeRouter)
 app.use('/recursos', recursosRouter);
 app.use('/novedades', novedadesRouter);
 app.use('/login', loginRouter);
-app.use('/admin/portal', secured, portalRouter);
+app.use('/admin/userconfig', secured, adminconfigRouter);
 app.use('/admin/home', secured, adminhomeRouter);
+app.use('/admin/novedades', secured, novedadesAdminRouter);
 
 
 // catch 404 and forward to error handler

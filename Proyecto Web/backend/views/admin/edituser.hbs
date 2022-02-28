@@ -1,0 +1,31 @@
+<div class="container" style="margin"50px auto>
+    <div class="row">
+        <div class="col-6 offset-3">
+            {{#if error}}
+                <h5>{{message}}</h5>
+            {{/if}}
+            <h4>Modificar Usuario</h4>
+            <form action="/admin/userconfig/edituser" method="post">
+                <input type="hidden" value="{{users.id_usu}}" name="usu_num">
+                <div class="mb-3">
+                    <input type="text" placeholder="Nombre" value="{{users.nombre}}" class="form-control" name="nombre">
+                </div>
+                <div class="mb-3">
+                    <input type="text" placeholder="Apellido" value="{{users.apellido}}" class="form-control" name="apellido">
+                </div>
+                <div class="mb-3">
+                    <input type="number" placeholder="Edad" value="{{users.edad}}" class="form-control" name="edad">
+                </div>
+                <div class="mb-3">
+                    <input type="text" value="{{users.mail}}" class="form-control" placeholder="mail@researchlab.achuu" name="mail" pattern=".+@researchlab\.achuu"
+            title="debe utilizar @researchlab.achuu">
+                </div>
+                <div class="mb-3">
+                    <input type="number" placeholder="Clearance" value="{{users.clearance}}" class="form-control" name="clearance">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Modificar</button>
+            </form>
+        </div>
+    </div>
+</div>
