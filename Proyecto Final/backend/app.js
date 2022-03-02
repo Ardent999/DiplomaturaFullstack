@@ -10,14 +10,16 @@ var md5 = require('md5');
 require('dotenv').config();
 var pool = require('./models/bd')
 
+var fileUpload = require('express-fileupload');
+var cors = require('cors');
+
 var indexRouter = require('./routes/index');
-var homeRouter = require('./routes/home')
-var recursosRouter = require('./routes/recursos');
-var novedadesRouter = require('./routes/novedades');
 var loginRouter = require('./routes/admin/login');
-var adminconfigRouter = require('./routes/admin/userconfig');
-var adminhomeRouter = require('./routes/admin/home');
-var novedadesAdminRouter = require('./routes/admin/novedades');
+var recursosAdmRouter = require('./routes/admin/recursos');
+var configAdmRouter = require('./routes/admin/userconfig');
+var homeAdmRouter = require('./routes/admin/home');
+var novedadesAdmRouter = require('./routes/admin/novedades');
+var apiRouter = require('./routes/api');
 
 
 // const req = require('express/lib/request');
@@ -35,7 +37,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-  secret: 'qwertyuioplkjhgfdsazxcvbnm',
+  secret: '13rhr7g23o75tyoXH38RTG376TRGia3nxg3rf6',
   resave: false,
   saveUninitialized: true
 }));
@@ -53,82 +55,26 @@ secured = async(req,res,next) => {
   }
 }
 
-// app.post('/logon', function (req, res) {
-
-//   if (req.body.nombre && req.body.apellido && req.body.password.length >= 8) {
-//     req.session.nombre = req.body.nombre
-//     req.session.apellido = req.body.apellido
-//     res.redirect('/home')
-//   } else {
-//     if (req.body.nombre == 0) {
-//       req.session.nombre = 'Debe ingresar un nombre'
-//     } else {
-//       req.session.nombre = ''
-//     }
-//     if (req.body.apellido == 0) {
-//       req.session.apellido = 'Debe ingresar un apellido'
-//     } else {
-//       req.session.apellido = ''
-//     }
-//     if (req.body.password.length < 8) {
-//       req.session.password = 'Debe ingresar una contrasena con por lo menos 8 caracteres'
-//     } else {
-//       req.session.password = ''
-//     }
-//     res.redirect('/login&fail')
-
-//   }
-// });
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: '/tmp/',
+  // folder: 'transportesX'
+}));
 
 
-// app.get('/userconfig', function (req, res) {
-//   // var success = Boolean(req.session.nombre && req.session.apellido)
 
-//   res.render('admin/userconfig', {
+
+// app.get('/admin/home', function (req, res) {
+//   res.render('admin/home', {
 //     title: 'Sesion Research Lab',
-//     // success: success,
 //     nombre: req.session.nombre,
 //     apellido: req.session.apellido,
 //     layout: 'admin/layout',
-//     mensjenvio: req.session.mensjenvio,
-//     mensjenviofail: req.session.mensjenviofail,
-//     mensjenviodel: req.session.mensjenviodel,
-//     mensjenviofaildel: req.session.mensjenviofaildel
 //   })
 // });
 
-app.get('/admin/home', function (req, res) {
-  res.render('admin/home', {
-    title: 'Sesion Research Lab',
-    nombre: req.session.nombre,
-    apellido: req.session.apellido,
-    layout: 'admin/layout',
-  })
-});
 
 
-// app.get('/login&fail', (req, res) {
-
-//   res.render('admin/login', {
-//     mensjfail: 'No todos los datos ingresados son correctos',
-//     nombrefail: req.session.nombre,
-//     apellidofail: req.session.apellido,
-//     passfail: req.session.password
-//   })
-// });
-
-// app.get('/loginfail', function (req, res) {
-//   var nomfail = Boolean(req.session.nombre)
-//   var apefail = Boolean(req.session.apellido)
-//   var pasfail = Boolean(req.session.password)
-
-//   res.render('admin/login', {
-//     mensjfail: 'No todos los datos ingresados son correctos',
-//     nombrefail: nomfail,
-//     apellidofail: apefail,
-//     passfail: pasfail
-//   })
-// });
 
 // app.post('/bdadd', function (req, res) {
 
@@ -161,28 +107,28 @@ app.get('/admin/home', function (req, res) {
 
 ///bddel no funciona 
 
-app.post('/bddel', function (req, res) {
-  var nom = req.body.bdnom;
-    var ape = req.body.bdape;
+// app.post('/bddel', function (req, res) {
+//   var nom = req.body.bdnom;
+//     var ape = req.body.bdape;
 
-  if (nom && ape) {
+//   if (nom && ape) {
     
 
-    pool.query('delete from usuarioslab where nombre=? and apellido=? ', [nom, ape]);
-    req.session.mensjenviodel = 'Has deleteado a ' + nom + ' ' + ape + '.'
-    req.session.mensjenviofaildel = null
-    req.session.mensjenvio = null
-    req.session.mensjenviofail = null
-    res.redirect('/userconfig')
-  } else {
-    req.session.mensjenviofaildel = 'esto ha fallido test.'
-    req.session.mensjenviodel = null
-    req.session.mensjenvio = null
-    req.session.mensjenviofail = null
-    res.redirect('/userconfig')
-  }
+//     pool.query('delete from usuarioslab where nombre=? and apellido=? ', [nom, ape]);
+//     req.session.mensjenviodel = 'Has deleteado a ' + nom + ' ' + ape + '.'
+//     req.session.mensjenviofaildel = null
+//     req.session.mensjenvio = null
+//     req.session.mensjenviofail = null
+//     res.redirect('/userconfig')
+//   } else {
+//     req.session.mensjenviofaildel = 'esto ha fallido test.'
+//     req.session.mensjenviodel = null
+//     req.session.mensjenvio = null
+//     req.session.mensjenviofail = null
+//     res.redirect('/userconfig')
+//   }
 
-});
+// });
 
 
 // var nam = 'juan';
@@ -190,7 +136,6 @@ app.post('/bddel', function (req, res) {
 // pool.query('delete from empleados where nombre=? and apellido=?', [nam, apa]).then(function (resultados) {
 //   console.log(resultados)
 // });
-
 
 //borrar
 // var id = 26;
@@ -203,19 +148,18 @@ app.post('/bddel', function (req, res) {
 //   res.redirect('/login')
 // });
 
-app.get('/salir', function(req,res) {
-  req.session.destroy()
-  res.redirect('/')
-});
+// app.get('/salir', function(req,res) {
+//   req.session.destroy()
+//   res.redirect('/')
+// });
 
 app.use('/', indexRouter);
-app.use('/home', homeRouter)
-app.use('/recursos', recursosRouter);
-app.use('/novedades', novedadesRouter);
 app.use('/login', loginRouter);
-app.use('/admin/userconfig', secured, adminconfigRouter);
-app.use('/admin/home', secured, adminhomeRouter);
-app.use('/admin/novedades', secured, novedadesAdminRouter);
+app.use('/admin/recursos', secured, recursosAdmRouter);
+app.use('/admin/userconfig', secured, configAdmRouter);
+app.use('/admin/home', secured, homeAdmRouter);
+app.use('/admin/novedades', secured, novedadesAdmRouter);
+app.use('/api', cors(), apiRouter);
 
 
 // catch 404 and forward to error handler

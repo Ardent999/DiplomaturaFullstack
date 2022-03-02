@@ -7,19 +7,21 @@ const Nav = (props) => {
         <nav >
             <div id="jscn">
                 <ul className="holder">
-                    <li><NavLink to="/Pacientes/PacientesPage" className={({ isActive }) => (isActive ? 'active' : '')}>Pacientes</NavLink>
+
+                    <li className='dropdown'><NavLink to="/Pacientes" className={({ isActive }) => (isActive ? 'active' : '')} id="hovt dropdown">Pacientes</NavLink>
                         <div className="dropdown-content">
-                            <NavLink to="/Pacientes/PacientesTurnosPage">Turnos Analisis</NavLink>
-                            <NavLink to="/Pacientes/PacientesPruebasMedicasPage">Pruebas Medicas</NavLink>
-                            <NavLink to="/Pacientes/PacientesCoberturasPage">Coberturas Medicas</NavLink>
-                            <NavLink to="/Pacientes/PacientesPortalPage">Portal Pacientes</NavLink>
+                            <NavLink to="/Pacientes/Turnos">Turnos Analisis</NavLink>
+                            <NavLink to="/Pacientes/PruebasMedicas">Pruebas Medicas</NavLink>
+                            <NavLink to="/Pacientes/Coberturas">Coberturas Medicas</NavLink>
+                            <NavLink to="/Pacientes/Portal">Portal Pacientes</NavLink>
                         </div>
                     </li>
-                    <li><NavLink to="/SectoresPage" className={({ isActive }) => (isActive ? 'active' : '')}>Sectores</NavLink></li>
-                    <li><NavLink to="/NosotrosPage" className={({ isActive }) => (isActive ? 'active' : '')}>Nosotros</NavLink></li>
-                    <li><NavLink to="/NovedadesPage" className={({ isActive }) => (isActive ? 'active' : '')}>Novedades</NavLink></li>
-                    <li><NavLink to="/EmpresasPage" className={({ isActive }) => (isActive ? 'active' : '')}>Empresas</NavLink></li>
-                    <li><NavLink to="/ContactoPage" className={({ isActive }) => (isActive ? 'active' : '')}>Contacto</NavLink></li>
+
+                    <li><NavLink to="/Sectores" className={({ isActive }) => (isActive ? 'active' : '')}>Sectores</NavLink></li>
+                    <li><NavLink to="/Nosotros" className={({ isActive }) => (isActive ? 'active' : '')}>Nosotros</NavLink></li>
+                    <li><NavLink to="/Novedades" className={({ isActive }) => (isActive ? 'active' : '')}>Novedades</NavLink></li>
+                    <li><NavLink to="/Empresas" className={({ isActive }) => (isActive ? 'active' : '')}>Empresas</NavLink></li>
+                    <li><NavLink to="/Contacto" className={({ isActive }) => (isActive ? 'active' : '')}>Contacto</NavLink></li>
 
 
                 </ul>
@@ -47,5 +49,7 @@ const Nav = (props) => {
 //                 document.getElementById("jsch").style.bottom = "40px";
 //             }
 //         }
+
+
 
 export default Nav;

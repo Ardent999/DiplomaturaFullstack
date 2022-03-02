@@ -19,3 +19,35 @@
     box-sizing: border-box;
     box-shadow: 2px 1px black;
 }
+
+.carousel {
+    max-width: 612px;
+    box-shadow: 10px 5px black;
+}
+
+.mySlides {
+    width: 100%;
+    /* display: none; */
+}
+
+textarea{
+    height: 10em;
+    width: 50%;
+    resize: none;
+}
+
+textarea:focus{
+    background-color: aqua;
+}
+
+textarea:focus::placeholder{
+    color: black;
+}
+
+input[type=text]:focus, input[type=number]:focus, input[type=email]:focus{
+    background-color: aqua;
+}
+
+input[type=text]:focus::placeholder, input[type=number]:focus::placeholder, input[type=email]:focus::placeholder{
+    color: black;
+}

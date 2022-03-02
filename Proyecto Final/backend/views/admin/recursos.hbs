@@ -1,0 +1,32 @@
+<p class="text-end" style="padding-right: 60px; font-size:1.5em; color:black;"> Hola {{usuario}} {{apellido}}! </p>
+
+{{#if clear2}}
+<h1 style="color: green;">Usted tiene accesso a una autorización de nivel elevado.</h1>
+{{/if}}
+
+{{#if clear1}}
+<main style="color: black;">
+    <h1>Bienvenido al sitio de recursos Research Lab</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cumque, error, doloremque modi molestias consequuntur reiciendis deleniti nisi illo at mollitia necessitatibus? Libero earum iste, error unde dolor modi voluptates!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, laudantium. Sequi deserunt minus quos odit cupiditate sed perspiciatis excepturi, illo suscipit repudiandae dolorem quibusdam numquam sint vitae optio ratione aut.</p>
+
+    <ul style="color: beige;">
+        <li><a style="color: aqua;" href="">link1</a></li>
+        <li><a style="color: aqua;" href="">link2</a></li>
+        <li><a style="color: aqua;" href="">link3</a></li>
+        <li><a style="color: aqua;" href="">link4</a></li>
+        <li><a style="color: aqua;" href="">link5</a></li>
+        <li><a style="color: aqua;" href="">link6</a></li>
+    </ul>
+</main>
+
+
+
+
+
+
+{{else}}
+<h1 style="color: red; text-align:center;">Usted no tiene suficiente autorización para acceder a esta pagina.</h1>
+{{/if}}
+
+

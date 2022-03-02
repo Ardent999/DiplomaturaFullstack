@@ -1,0 +1,24 @@
+<div class="container" style="margin"50px auto>
+    <div class="row">
+        <div class="col-6 offset-3">
+            {{#if error}}
+                <h5>{{message}}</h5>
+            {{/if}}
+            <h4>Modificar Clave</h4>
+            <form action="/admin/userconfig/editpass" method="post">
+                <input type="hidden" value="{{users.id_usu}}" name="usu_num2">
+                {{!-- <div class="mb-3">
+                    <input type="text" placeholder="Antigua Clave" class="form-control" name="clavevieja">
+                </div> --}}
+                {{!-- <div class="mb-3">
+                    <input type="text" placeholder="Antigua Clave" value="{{users.password}}" class="form-control" name="clavevieja222">
+                </div> --}}
+                <div class="mb-3">
+                    <input type="text" placeholder="Nueva Clave" class="form-control" name="clavenueva">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Modificar</button>
+            </form>
+        </div>
+    </div>
+</div>

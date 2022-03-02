@@ -1,6 +1,6 @@
 import '../styles/components/pages/NosotrosPage.css'
 
-const HomePage = (props) => {
+const NosotrosPage = (props) => {
     return (
         <main className="holder">
 
@@ -124,4 +124,4 @@ const HomePage = (props) => {
         );
 }
 
-export default HomePage;
+export default NosotrosPage;

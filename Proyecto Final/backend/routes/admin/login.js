@@ -17,6 +17,7 @@ router.post('/', async (req, res, next) => {
       req.session.mail = data.mail; //This is used with the secured command. Calls 'mail' from sql
       req.session.nombre = data.nombre; //This is used with the secured command Calls 'nombre' from sql
       req.session.apellido = data.apellido;
+      req.session.clearance = data.clearance;
       res.redirect('/admin/home');
     } else {
       res.render('admin/login', {

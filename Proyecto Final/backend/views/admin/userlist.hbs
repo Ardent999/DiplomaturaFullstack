@@ -2,7 +2,7 @@
 <div class="container" style="margin 50px auto">
     <div class="row">
 
-        <p class="text-end"> Hola {{usuario}} {{apellido}}! </p>
+        <p class="text-end" style="padding-right: 60px; font-size:1.5em; color:black;"> Hola {{usuario}} {{apellido}}! </p>
 
     </div>
 
@@ -23,7 +23,7 @@
                         <th scope="col">Edad</th>
                         <th scope="col">Mail</th>
                         <th scope="col">Clearance</th>
-                        <th class="col-1">Acciones</th>
+                        <th class="text-end" style="padding-right: 30px;">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,10 +34,12 @@
                 <td>{{nombre}} {{apellido}}</td>
                 <td>{{edad}}</td>
                 <td>{{mail}}</td>
-                <td>{{clearance}}</td>
+                <td style="padding-left:35px;">{{clearance}}</td>
                 <td class="text-end">
                     <a href="/admin/userconfig/edituser/{{id_usu}}" class="btn btn-sm btn-secondary">
                         <i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+                    <a href="/admin/userconfig/editpass/{{id_usu}}" class="btn btn-sm btn-secondary">
+                        <i class="fas fa-solid fa-key" aria-hidden="true"></i></a>
                     <a href="/admin/userconfig/deleteuser/{{id_usu}}" class="btn btn-sm btn-secondary">
                         <i class="fa fa-trash" aria-hidden="true"></i></a>
                 </td>

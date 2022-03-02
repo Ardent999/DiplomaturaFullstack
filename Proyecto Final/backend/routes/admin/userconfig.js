@@ -4,19 +4,19 @@ var adminModel = require('./../../models/adminModel')
 var md5 = require('md5');
 
 
-router.get('/', function (req, res, next) {
-  res.render('admin/userconfig', {
-    layout: 'admin/layout',
-    usuario: req.session.nombre,
-    apellido: req.session.apellido,
-    mensjenvio: req.session.mensjenvio,
-    mensjenviofail: req.session.mensjenviofail,
-    mensjenviodel: req.session.mensjenviodel,
-    mensjenviofaildel: req.session.mensjenviofaildel
-  });
-});
+// router.get('/', function (req, res, next) {
+//   res.render('admin/userconfig', {
+//     layout: 'admin/layout',
+//     usuario: req.session.nombre,
+//     apellido: req.session.apellido,
+//     mensjenvio: req.session.mensjenvio,
+//     mensjenviofail: req.session.mensjenviofail,
+//     mensjenviodel: req.session.mensjenviodel,
+//     mensjenviofaildel: req.session.mensjenviofaildel
+//   });
+// });
 
-router.get('/userlist', async function (req, res, next) {
+router.get('/', async function (req, res, next) {
   var users = await adminModel.fetchUsers();
   res.render('admin/userlist', {
     layout: 'admin/layout',
@@ -26,39 +26,10 @@ router.get('/userlist', async function (req, res, next) {
   });
 });
 
-// router.post('/bdadd', function (req, res) {
-
-//   if (req.body.bdnombre && req.body.bdapellido && req.body.bdedad && req.body.bdmail && req.body.bdclave) {
-
-//     var obj = {
-//       nombre: req.body.bdnombre,
-//       apellido: req.body.bdapellido,
-//       edad: req.body.bdedad,
-//       mail: req.body.bdmail,
-//       password: md5(req.body.bdclave),
-//       clearance: 0
-//     }
-
-//     pool.query('insert into usuarioslab set ?', [obj]);
-//     req.session.mensjenvio = 'gracias por registrarte'
-//     req.session.mensjenviofail = null
-//     // req.session.mensjenviofaildel = null
-//     // req.session.mensjenviodel = null
-//     res.redirect('/admin/userconfig')
-
-//   } else {
-//     req.session.mensjenviofail = 'ingrese datos en todos los campos.'
-//     req.session.mensjenvio = null
-//     // req.session.mensjenviofaildel = null
-//     // req.session.mensjenviodel = null
-//     res.redirect('/admin/userconfig')
-//   }
-// });
-
 router.get('/deleteuser/:id', async (req, res, next) => {
   var usur = req.params.id;
   await adminModel.deleteUserById(usur);
-  res.redirect('/admin/userconfig/userlist')
+  res.redirect('/admin/userconfig')
 });
 
 router.get('/adduser', (req, res, next) => {
@@ -79,7 +50,7 @@ router.post('/adduser', async (req, res, next) => {
   try {
     if (req.body.nombre != "" && req.body.apellido != "" && req.body.edad != "" && req.body.mail != "" && req.body.clave != "") {
       await adminModel.insertUsers(usu);
-      res.redirect('/admin/userconfig/userlist')
+      res.redirect('/admin/userconfig')
     } else {
       res.render('admin/adduser', {
         layout: 'admin/layout',
@@ -102,6 +73,7 @@ router.get('/edituser/:id', async (req, res, next) => {
   var usur = req.params.id;
   console.log(req.params.id);
   var users = await adminModel.fetchUserById(usur);
+  console.log(users)
 
   res.render('admin/edituser', {
     layout: 'admin/layout',
@@ -122,7 +94,7 @@ router.post('/edituser', async (req, res, next) => {
     console.log(obj)
 
     await adminModel.modifyUserById(obj, req.body.usu_num);
-    res.redirect('/admin/userconfig/userlist');
+    res.redirect('/admin/userconfig');
   }
   catch (error) {
     console.log(error)
@@ -133,6 +105,62 @@ router.post('/edituser', async (req, res, next) => {
     })
   }
 })
+
+router.get('/editpass/:id', async (req, res, next) => {
+  var usur = req.params.id;
+  console.log(req.params.id);
+  var users = await adminModel.fetchUserById(usur);
+  console.log(users)
+
+  res.render('admin/editpass', {
+    layout: 'admin/layout',
+    users
+  });
+});
+
+//change pass
+router.post('/editpass', async (req, res, next) => {
+  
+  //var clavevieja = req.body.clavevieja
+  //const clavevieja222 = req.body.clavevieja222
+  //console.log(clavevieja)
+ // console.log(clavevieja222)
+  //if (md5(clavevieja) === clavevieja222 ) {
+    try {
+      if (req.body.clavenueva) {
+      let obj2 = {
+        password: md5(req.body.clavenueva),
+      }
+      console.log(req.session.password)
+    
+
+      await adminModel.modifyUserById(obj2, req.body.usu_num2);
+      res.redirect('/admin/userconfig');
+    } else {
+      res.render('admin/editpass', {
+        layout: 'admin/layout',
+        error: true,
+        message: 'Debe ingresar una Clave'
+      })
+    }
+    }
+    catch (error) {
+      console.log(error)
+      res.render('admin/editpass', {
+        layout: 'admin/layout',
+        error: true,
+        message: 'No se modifico la clave'
+      })
+    }
+  //} else {
+   // res.render('admin/editpass', {
+     // layout: 'admin/layout',
+     // error: true,
+     // message: 'Clave incorrecta'
+   // })
+  //};
+});
+
 
 module.exports = router;
 

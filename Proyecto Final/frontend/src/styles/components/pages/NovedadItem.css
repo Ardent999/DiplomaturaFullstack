@@ -1,0 +1,20 @@
+.novedades h2{
+    color: brown;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex div{
+    padding-right: 10px;
+    width: 70%;
+}
+
+.novedades img{
+    border-radius: 20%;
+}
+
+.novedades hr {
+    border-bottom: 3px dashed black;
+}

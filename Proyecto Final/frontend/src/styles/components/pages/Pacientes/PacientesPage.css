@@ -1,0 +1,18 @@
+.wipimg {
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+.pacpag {
+    line-height: 2em;
+}
+
+.pacpag h3 {
+    color: red;
+    text-align: center;
+}
+
+.pacpag h1{
+    line-height: 1.1em;
+}

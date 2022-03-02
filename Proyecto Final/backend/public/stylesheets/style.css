@@ -119,12 +119,18 @@ footer {
   text-align: center;
   width: 25%;
   margin: auto;
+  margin-top: 50px;
+  margin-bottom: 200px;
 }
 
 .form input{
   height: 2em;
 }
 
+.form h3 {
+  text-align: left;
+  padding-left: 20%;
+}
 
 
 .form2{
@@ -154,3 +160,12 @@ footer {
   font-size: 0.6em;
 }
 /*End of Forms*/
+
+
+/*Miscellaneous*/
+
+.centtext {
+  text-align: center;
+}
+
+/*End of Miscellaneous*/

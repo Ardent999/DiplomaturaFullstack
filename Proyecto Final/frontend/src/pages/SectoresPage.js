@@ -3,7 +3,7 @@ import '../styles/components/pages/SectoresPage.css'
 const HomePage = (props) => {
     return (
         <main className="holder">
-        <h2>Sectores de Investigacion</h2>
+        <h2 style={{fontSize:'2.5em', marginBottom:'2em', marginTop:'1em'}}>Sectores de Investigacion</h2>
         <div className="sector">
             <img src="img/Labs/lab3.jpg" alt="Microlab" />
             <div className="info">
