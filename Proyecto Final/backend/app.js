@@ -162,6 +162,7 @@ app.use('/admin/novedades', secured, novedadesAdmRouter);
 app.use('/api', cors(), apiRouter);
 
 
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
