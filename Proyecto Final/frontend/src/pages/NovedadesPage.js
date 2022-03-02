@@ -25,6 +25,7 @@ const NovedadesPage = (props) => {
     return (
         <main className="holder">
         <h1 className='nov'>Novedades</h1>
+        <p>Accesso al sitio de administracion: <a href='http://localhost:3000'>Aqui</a></p>
         {loading ? (
             <p>Cargando...</p>
         ) : (

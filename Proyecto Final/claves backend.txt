@@ -1,0 +1,10 @@
+Cuentas:
+
+email - admin@researchlab.achuu
+pass - admin
+
+email - juan@researchlab.achuu
+pass - juanjuan11
+
+email - diana@researchlab.achuu
+pass - diana999
